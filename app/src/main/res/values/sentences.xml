@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sentences">
+        <item>You are beautiful !</item>
+        <item>Today is a great day !</item>
+        <item>I love you but it\'s more important to love yourself</item>
+        <item>Look around you for something beautiful. Beauty is everywhere !</item>
+    </string-array>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sentences">
+        <item>Tu es magnifique !</item>
+        <item>Aujourd\'hui est une belle journée !</item>
+        <item>Sourire est toujours source d\'inspiration :)</item>
+        <item>Le soleil existe même par delà les nuages</item>
+        <item>Après la pluie le beau temps</item>
+        <item>Le temps est un ami précieux, prends-en soin</item>
+        <item>Chaque jour, tout est différent : de la feuille d\'arbre qui grandit au pétale de la rose qui fanne</item>
+    </string-array>
+</resources>

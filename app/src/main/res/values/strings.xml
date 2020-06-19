@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Happy</string>
+    <string name="hello">Hello !</string>
+    <string name="config">Config</string>
+    <string name="refresh">Refresh</string>
+    <string name="close">Close</string>
+    <string name="Configuration">Configuration</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="config_receive_random">Receive a random happy message everyday ?</string>
+    <string name="config_range">Configure time slot for receiving the message :</string>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preferences-->
+    <string name="pref_happy" translatable="false">fr.milleron.happy.PREF</string>
+    <string name="pref_receive_random" translatable="false">fr.milleron.happy.RECEIVE_RANDOM</string>
+    <string name="pref_min_time" translatable="false">fr.milleron.happy.MIN_TIME</string>
+    <string name="pref_max_time" translatable="false">fr.milleron.happy.MAX_TIME</string>
+    <string name="pref_lang" translatable="false">fr.milleron.happy.LANG</string>
+
+</resources>
