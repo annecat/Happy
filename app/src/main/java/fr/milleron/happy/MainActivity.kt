@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity() {
         this.bottomNavigation.setOnNavigationItemSelectedListener(menuChange)
         this.bottomNavigation.setOnNavigationItemReselectedListener(menuReselect)
         refreshSentence()
-
+        RandomAlarm.createNotificationChannel(this)
+        RandomAlarm.cancelNotification(this)
+        RandomAlarm.setRandomAlarm(this)
     }
 
 

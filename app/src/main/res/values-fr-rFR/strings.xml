@@ -13,4 +13,5 @@
     <string name="config_receive_random">Recevoir aléatoirement un message par jour ?</string>
     <string name="config_range">Configurer les heures de reception du message :</string>
     <string name="title_activity_settings">Configuration</string>
+    <string name="hours_short">%1$d h</string>
 </resources>

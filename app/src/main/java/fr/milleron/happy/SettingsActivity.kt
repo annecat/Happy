@@ -23,10 +23,10 @@ class SettingsActivity : AppCompatActivity() {
         // load preferences
         val minimumTime = findViewById<TextView>(R.id.minimum_time)
         val maximumTime = findViewById<TextView>(R.id.maximum_time)
-        var timeSlotText = findViewById<TextView>(R.id.timeSlot)
-        var rangeSeekBar = findViewById<CrystalRangeSeekbar>(R.id.range_seek_bar)
+        val timeSlotText = findViewById<TextView>(R.id.timeSlot)
+        val rangeSeekBar = findViewById<CrystalRangeSeekbar>(R.id.range_seek_bar)
         val seekBarLayout = findViewById<LinearLayout>(R.id.linearLayoutSeekBar)
-        var sharedPref = getSharedPreferences(getString(R.string.pref_happy), Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences(getString(R.string.pref_happy), Context.MODE_PRIVATE)
         sharedPref.getString(getString(R.string.pref_receive_random), "YES")
 
         // Update seekbar
@@ -34,41 +34,41 @@ class SettingsActivity : AppCompatActivity() {
         rangeSeekBar.setMaxStartValue(sharedPref.getInt(getString(R.string.pref_max_time), 18).toFloat())
         rangeSeekBar.apply()
         //update radiobutton
-        val radioButtonYes = findViewById<RadioButton>(R.id.radioButtonYes);
-        val radioButtonNo = findViewById<RadioButton>(R.id.radioButtonNo);
+        val radioButtonYes = findViewById<RadioButton>(R.id.radioButtonYes)
+        val radioButtonNo = findViewById<RadioButton>(R.id.radioButtonNo)
 
         if (sharedPref.getString(getString(R.string.pref_receive_random), "YES") == "NO")
         {
-            radioButtonYes.isChecked = false;
-            radioButtonNo.isChecked = true;
-            timeSlotText.visibility = View.INVISIBLE;
-            seekBarLayout.visibility = View.INVISIBLE;
+            radioButtonYes.isChecked = false
+            radioButtonNo.isChecked = true
+            timeSlotText.visibility = View.INVISIBLE
+            seekBarLayout.visibility = View.INVISIBLE
         }
 
 
         radioButtonNo.setOnClickListener{
-            seekBarLayout.visibility = View.INVISIBLE;
-            timeSlotText.visibility = View.INVISIBLE;
+            seekBarLayout.visibility = View.INVISIBLE
+            timeSlotText.visibility = View.INVISIBLE
         }
 
         radioButtonYes.setOnClickListener{
-            seekBarLayout.visibility = View.VISIBLE;
-            timeSlotText.visibility = View.VISIBLE;
+            seekBarLayout.visibility = View.VISIBLE
+            timeSlotText.visibility = View.VISIBLE
         }
 
         rangeSeekBar.setOnRangeSeekbarChangeListener { n, n2 ->
-            minimumTime.text = n.toString()+"h";
-            maximumTime.text = n2.toString()+"h";
+            minimumTime.text = getString(R.string.hours_short, n.toInt())
+            maximumTime.text = getString(R.string.hours_short, n2.toInt())
         }
     }
 
     fun settingsSave(v:View) {
         // save preferences
         val rangeSeekBar = findViewById<CrystalRangeSeekbar>(R.id.range_seek_bar)
-        var sharedPref = getSharedPreferences(getString(R.string.pref_happy), Context.MODE_PRIVATE)
-        var edit = sharedPref.edit();
+        val sharedPref = getSharedPreferences(getString(R.string.pref_happy), Context.MODE_PRIVATE)
+        val edit = sharedPref.edit()
 
-        val radioButtonYes = findViewById<RadioButton>(R.id.radioButtonYes);
+        val radioButtonYes = findViewById<RadioButton>(R.id.radioButtonYes)
 
         if (radioButtonYes.isChecked)
             edit.putString(getString(R.string.pref_receive_random), "YES")
@@ -76,8 +76,8 @@ class SettingsActivity : AppCompatActivity() {
             edit.putString(getString(R.string.pref_receive_random), "NO")
         edit.putInt(getString(R.string.pref_min_time), rangeSeekBar.selectedMinValue.toInt())
         edit.putInt(getString(R.string.pref_max_time), rangeSeekBar.selectedMaxValue.toInt())
-        edit.apply();
-
+        edit.apply()
+        RandomAlarm.setRandomAlarm(this, sharedPref)
         finish()
     }
 

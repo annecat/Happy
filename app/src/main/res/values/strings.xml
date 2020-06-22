@@ -11,7 +11,7 @@
     <string name="no">No</string>
     <string name="config_receive_random">Receive a random happy message everyday ?</string>
     <string name="config_range">Configure time slot for receiving the message :</string>
-
+    <string name="hours_short">%1$d h</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Preferences-->
@@ -20,5 +20,9 @@
     <string name="pref_min_time" translatable="false">fr.milleron.happy.MIN_TIME</string>
     <string name="pref_max_time" translatable="false">fr.milleron.happy.MAX_TIME</string>
     <string name="pref_lang" translatable="false">fr.milleron.happy.LANG</string>
+    <string name="pref_last_received_message" translatable="false">fr.milleron.happy.LAST_RECEIVED</string>
+    <string name="channel_description" translatable="false">"Channel For Happy Random Message "</string>
+    <string name="channel_name" translatable="false">Happy Channel</string>
+    <string name="channel_id" translatable="false">fr.milleron.happy.happy_channel</string>
 
 </resources>
